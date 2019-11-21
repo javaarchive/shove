@@ -114,7 +114,7 @@ class DBMStore(SyncStore):
     def __iter__(self):
         return iter(self.loads(i) for i in self._store.keys())
 
-
+    # Should be Python future proofed
 class FileStore(FileBase, BaseStore):
 
     '''
@@ -128,7 +128,7 @@ class FileStore(FileBase, BaseStore):
     Alternatively, a native pathname to the directory can be passed as the
     'engine' argument.
     '''
-
+    # Ok
     init = 'file://'
 
     def clear(self):
@@ -144,9 +144,11 @@ class SQLiteStore(SQLiteBase, BaseStore):
 
     shove's URI for sqlite stores follows the form:
 
-    lite://<path>
-
+    sqlite://<path>
+    
+    Note from forker: Used to lite:// but changed to sqlite:// to avoid confusion. 
+    
     Where the path is a URI path to a file on a local filesystem or ":memory:".
     '''
 
-    init = 'lite://'
+    init = 'sqlite://'
