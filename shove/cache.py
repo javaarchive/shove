@@ -134,13 +134,15 @@ class SQLiteCache(BaseCache, SQLiteBase, CloseStore):
     sqlite-based cache
 
     shove's URI for sqlite caches follows the form:
-
-    lite://<path>
+    
+    Forker's Note: Originally the scheme was just lite://
+    
+    sqlite://<path>
 
     Where the path is a URI path to a file on a local filesystem or ":memory:".
     '''
 
-    init = 'lite://'
+    init = 'sqlite://'
 
 
 class BaseLRUCache(BaseCache):
