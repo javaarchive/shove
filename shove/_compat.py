@@ -6,7 +6,7 @@ from stuf.base import backport
 
 anydbm = backport('anydbm', 'dbm')
 # url2pathname = backport('urllib.url2pathname', 'urllib.request.url2pathname')
-url2pathname = __import__("urllib.request").url2pathname
+url2pathname = __import__("urllib").request.url2pathname
 urlsplit = backport('urlparse.urlsplit', 'urllib.parse.urlsplit')
 quote_plus = backport('urllib.quote_plus', 'urllib.parse.quote_plus')
 unquote_plus = backport('urllib.unquote_plus', 'urllib.parse.unquote_plus')
